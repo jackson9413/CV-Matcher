@@ -15,7 +15,10 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 # Load the Sentence Transformer model once when the app starts
 # This is crucial for performance, so it doesn't reload on every request.
 # 'all-MiniLM-L6-v2' is a good, lightweight choice.
-model = SentenceTransformer('all-MiniLM-L6-v2')
+model = SentenceTransformer('all-MiniLM-L6-v2')  ## Download from Hugging Face
+# Path to your local directory where you downloaded the model files
+# local_model_path = 'models/all-MiniLM-L6-v2'
+# model = SentenceTransformer(local_model_path)
 
 # --- Helper Functions ---
 def allowed_file(filename):
